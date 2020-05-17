@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fit: BoxFit.contain,
                   width: 200,
                 ),
+                
               ],
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tinycolor/tinycolor.dart';
 
 class UnknownRouteScreen extends StatelessWidget {
   const UnknownRouteScreen({Key key}) : super(key: key);
@@ -11,9 +12,14 @@ class UnknownRouteScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              '404',
-              textScaleFactor: 10,
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Text(
+                  '404',
+                  textScaleFactor: 10,
+                ),
+              ],
             ),
             Text(
               'Lost in Flutter!',
@@ -21,10 +27,16 @@ class UnknownRouteScreen extends StatelessWidget {
             ),
             Text('Sorry the page you\'re looking for isn\'t here 😮'),
             SizedBox(height: 20),
-            OutlineButton(
-              onPressed: () => Navigator.pushNamed(context, '/'),
+            MaterialButton(
+              elevation: 0,
+              minWidth: 150,
+              onPressed: () => Navigator.pushReplacementNamed(context, '/'),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
+                side: BorderSide(
+                  width: 1.0,
+                  color: TinyColor(Theme.of(context).scaffoldBackgroundColor).isLight() ? Colors.black : Colors.white,
+                ),
               ),
               child: Text('Go Home'),
             ),

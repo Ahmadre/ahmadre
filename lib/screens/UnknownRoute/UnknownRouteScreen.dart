@@ -20,6 +20,14 @@ class UnknownRouteScreen extends StatelessWidget {
               textScaleFactor: 3,
             ),
             Text('Sorry the page you\'re looking for isn\'t here 😮'),
+            SizedBox(height: 20),
+            OutlineButton(
+              onPressed: () => Navigator.pushNamed(context, '/'),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text('Go Home'),
+            ),
           ],
         ),
       ),

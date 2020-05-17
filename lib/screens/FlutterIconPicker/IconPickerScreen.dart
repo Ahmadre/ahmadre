@@ -45,19 +45,46 @@ class _PickerHomeScreenState extends State<PickerHomeScreen> {
   Icon _icon;
   bool isAdaptive = true;
 
+  IconPack selectedPack = IconPack.cupertino;
+  List<PopupMenuEntry<IconPack>> packOptions = [];
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      loadOptions();
+    });
+  }
+
+  void loadOptions() {
+    packOptions = [];
+    packOptions.addAll([
+      PopupMenuItem<IconPack>(value: IconPack.material, child: Text('Material')),
+      PopupMenuItem<IconPack>(value: IconPack.cupertino, child: Text('Cupertino')),
+      PopupMenuItem<IconPack>(value: IconPack.materialOutline, child: Text('Material Outline')),
+      PopupMenuItem<IconPack>(value: IconPack.fontAwesomeIcons, child: Text('Font Awesome')),
+      PopupMenuItem<IconPack>(value: IconPack.lineAwesomeIcons, child: Text('Line Awesome')),
+    ]);
+    setState(() {});
+  }
+
+  void _selectedOption(IconPack val) {
+    setState(() {
+      selectedPack = val;
+    });
+  }
+
   _pickIcon() async {
     IconData icon = await FlutterIconPicker.showIconPicker(
       context,
       adaptiveDialog: isAdaptive,
       iconPickerShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      iconPackMode: IconPack.cupertino,
+      iconPackMode: selectedPack,
     );
 
     if (icon != null) {
       _icon = Icon(icon);
       setState(() {});
-
-      debugPrint('Picked Icon:  $icon');
     }
   }
 
@@ -70,16 +97,22 @@ class _PickerHomeScreenState extends State<PickerHomeScreen> {
           color: Colors.white,
         ),
         actions: [
-          FlatButton.icon(
-            onPressed: () => {},
-            icon: Icon(
-              Icons.style,
-              color: Colors.white,
-            ),
-            label: Text(
-              'IconPack',
-              style: TextStyle(
+          PopupMenuButton<IconPack>(
+            onSelected: (val) => _selectedOption(val),
+            itemBuilder: (BuildContext context) => packOptions,
+            initialValue: selectedPack,
+            icon: null,
+            child: FlatButton.icon(
+              onPressed: null,
+              icon: Icon(
+                Icons.style,
                 color: Colors.white,
+              ),
+              label: Text(
+                'IconPack',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
           ),

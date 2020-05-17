@@ -19,9 +19,9 @@ class _FlutterIconPickerExampleState extends State<FlutterIconPickerExample> {
     final service = Provider.of<AppService>(context, listen: false);
 
     return PickerHomeScreen(
-      isDarkTheme: service.brightness.mode == ThemeMode.dark,
-      onThemeChanged: (bool val) => setState(() {
-        service.brightness = AppBrightness.from(val == true ? 'dark' : 'light');
+      brightness: service.brightness,
+      onThemeChanged: (AppBrightness val) => setState(() {
+        service.brightness = val;
       }),
     );
   }
@@ -30,12 +30,12 @@ class _FlutterIconPickerExampleState extends State<FlutterIconPickerExample> {
 class PickerHomeScreen extends StatefulWidget {
   const PickerHomeScreen({
     Key key,
-    this.isDarkTheme,
+    this.brightness,
     this.onThemeChanged,
   }) : super(key: key);
 
-  final bool isDarkTheme;
-  final ValueChanged<bool> onThemeChanged;
+  final AppBrightness brightness;
+  final ValueChanged<AppBrightness> onThemeChanged;
 
   @override
   _PickerHomeScreenState createState() => _PickerHomeScreenState();
@@ -70,15 +70,30 @@ class _PickerHomeScreenState extends State<PickerHomeScreen> {
           color: Colors.white,
         ),
         actions: [
+          FlatButton.icon(
+            onPressed: () => {},
+            icon: Icon(
+              Icons.style,
+              color: Colors.white,
+            ),
+            label: Text(
+              'IconPack',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
           IconButton(
             color: Colors.white,
-            icon: widget.isDarkTheme
+            icon: widget.brightness.mode == ThemeMode.dark
                 ? Transform.rotate(
                     angle: .55,
                     child: Icon(Icons.brightness_3),
                   )
-                : Icon(Icons.brightness_7),
-            onPressed: () => widget.onThemeChanged(!widget.isDarkTheme),
+                : widget.brightness.mode == ThemeMode.light ? Icon(Icons.brightness_7) : Icon(Icons.brightness_auto),
+            onPressed: () => widget.onThemeChanged(widget.brightness.mode == ThemeMode.dark
+                ? AppBrightness.light
+                : widget.brightness.mode == ThemeMode.light ? AppBrightness.system : AppBrightness.dark),
             tooltip: 'Switch brightness',
           ),
         ],

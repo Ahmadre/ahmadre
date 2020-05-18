@@ -22,6 +22,7 @@ class _LUITSScreenState extends State<LUITSScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('LUITS App'),
+        iconTheme: Theme.of(context).iconTheme.copyWith(color: Colors.white),
       ),
       body: Center(
         child: Container(
@@ -134,7 +135,7 @@ This app will provide texts, videos and images in the form of instructions and w
                             height: 20,
                           ),
                         ),
-                      ),                      
+                      ),
                       ActionChip(
                         label: Text('Fastlane'),
                         onPressed: () async {

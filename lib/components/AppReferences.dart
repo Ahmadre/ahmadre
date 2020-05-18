@@ -75,6 +75,7 @@ class _AppReferencesState extends State<AppReferences> {
                   Text(
                     'Google Play',
                     textScaleFactor: 1.3,
+                    style: TextStyle(color: Colors.white),
                   ),
                 ],
               ),
@@ -121,6 +122,7 @@ class _AppReferencesState extends State<AppReferences> {
                   Text(
                     'App Store',
                     textScaleFactor: 1.3,
+                    style: TextStyle(color: Colors.white),
                   ),
                 ],
               ),
@@ -168,6 +170,7 @@ class _AppReferencesState extends State<AppReferences> {
                   Text(
                     'Web App',
                     textScaleFactor: 1.3,
+                    style: TextStyle(color: Colors.white),
                   ),
                 ],
               ),

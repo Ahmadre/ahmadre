@@ -22,6 +22,7 @@ class _SRIAppScreenState extends State<SRIAppScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('SRI App'),
+        iconTheme: Theme.of(context).iconTheme.copyWith(color: Colors.white),
       ),
       body: Center(
         child: Container(

@@ -63,23 +63,14 @@ class ProjectScreen extends StatelessWidget {
                 height: 10,
               ),
               ListTile(
-                onTap: () async {
-                  final String sriapp = 'https://sriapp.telexiom.de/#/';
-                  if (await canLaunch(sriapp)) {
-                    launch(
-                      sriapp,
-                      enableDomStorage: true,
-                      enableJavaScript: true,
-                    );
-                  }
-                },
+                onTap: () => Navigator.pushNamed(context, '/sriapp'),
                 contentPadding: EdgeInsets.zero,
                 leading: Image.asset(
                   'assets/images/atem_logo.png',
                   width: 47,
                 ),
                 title: Text('SRI (Severe Respiratory Insufficiency) App'),
-                trailing: Icon(Icons.open_in_new),
+                trailing: Icon(Icons.arrow_forward_ios),
               ),
               SizedBox(
                 height: 10,
@@ -114,16 +105,7 @@ class ProjectScreen extends StatelessWidget {
                 height: 10,
               ),
               ListTile(
-                onTap: () async {
-                  final String luitsapp = 'https://pulmonary-intensive-care-unit.firebaseapp.com/#/';
-                  if (await canLaunch(luitsapp)) {
-                    launch(
-                      luitsapp,
-                      enableDomStorage: true,
-                      enableJavaScript: true,
-                    );
-                  }
-                },
+                onTap: () => Navigator.pushNamed(context, '/luitsapp'),
                 contentPadding: EdgeInsets.zero,
                 leading: Container(
                   padding: EdgeInsets.all(10),
@@ -135,7 +117,7 @@ class ProjectScreen extends StatelessWidget {
                   child: FlutterLogo(),
                 ),
                 title: Text('LUITS App Beta (eHealth Wiki)'),
-                trailing: Icon(Icons.open_in_new),
+                trailing: Icon(Icons.arrow_forward_ios),
               ),
             ],
           ),

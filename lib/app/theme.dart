@@ -11,7 +11,7 @@ abstract class AppTheme {
       ),
     ),
     fontFamily: GoogleFonts.montserrat().fontFamily,
-    visualDensity: VisualDensity.comfortable,
+    visualDensity: VisualDensity.standard,
   );
 
   static final dark = ThemeData(
@@ -23,6 +23,6 @@ abstract class AppTheme {
       ),
     ),
     fontFamily: GoogleFonts.montserrat().fontFamily,
-    visualDensity: VisualDensity.comfortable,
+    visualDensity: VisualDensity.standard,
   );
 }

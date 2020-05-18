@@ -14,31 +14,35 @@ class AppService extends ChangeNotifier {
     }
     box = await Hive.openBox('box.mataku');
     final brightness = AppBrightness.from(await box.get('appBrightness'));
+    final content = 'projects';
     final locale =
         (await box.get('userLanguage')) != null ? Locale((await box.get('userLanguage'))) : const Locale('en');
     final localizationsDelegate = MatakuLocalizations.delegate;
     final overlayStyle = brightness.mode == ThemeMode.dark
         ? SystemUiOverlayStyle.dark.copyWith(statusBarBrightness: Brightness.dark)
         : SystemUiOverlayStyle.light.copyWith(statusBarBrightness: Brightness.light);
-    return AppService._(brightness, locale, localizationsDelegate, overlayStyle);
+    return AppService._(brightness, content, locale, localizationsDelegate, overlayStyle);
   }
 
   AppService._(
     AppBrightness brightness,
+    String content,
     Locale locale,
     LocalizationsDelegate<MatakuLocalizations> localizationsDelegate,
     SystemUiOverlayStyle overlayStyle,
   )   : _brightness = brightness,
+        _actualContent = content,
         _locale = locale,
         _localizationsDelegate = localizationsDelegate,
         _overlayStyle = overlayStyle;
 
   static Box box;
 
+  String _actualContent;
+
   AppBrightness _brightness;
 
   SystemUiOverlayStyle _overlayStyle;
-
 
   LocalizationsDelegate<MatakuLocalizations> _localizationsDelegate;
 
@@ -57,6 +61,17 @@ class AppService extends ChangeNotifier {
     box.put('userLanguage', _locale.languageCode);
     notifyListeners();
   }
+
+  String get content => _actualContent;
+
+  set content(String value) {
+    if (_actualContent == value) {
+      return;
+    }
+    _actualContent = value;
+    notifyListeners();
+  }
+
 
   LocalizationsDelegate<MatakuLocalizations> get localizationsDelegate => _localizationsDelegate;
 

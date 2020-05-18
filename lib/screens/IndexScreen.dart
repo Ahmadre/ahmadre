@@ -1,5 +1,6 @@
 import 'package:app/app/service.dart';
 import 'package:app/components/ResponsiveNavigationBar.dart';
+import 'package:app/components/SideMenu.dart';
 import 'package:app/screens/AboutScreen/AboutScreen.dart';
 import 'package:app/screens/ContactScreen/ContactScreen.dart';
 import 'package:app/screens/ProjectScreen/ProjectScreen.dart';
@@ -10,10 +11,12 @@ class IndexScreen extends StatefulWidget {
   IndexScreen({Key key}) : super(key: key);
 
   @override
-  _IndexScreenState createState() => _IndexScreenState();
+  IndexScreenState createState() => IndexScreenState();
 }
 
-class _IndexScreenState extends State<IndexScreen> {
+class IndexScreenState extends State<IndexScreen> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   void initState() {
     super.initState();
@@ -31,7 +34,11 @@ class _IndexScreenState extends State<IndexScreen> {
           fit: BoxFit.cover,
         ),
         Scaffold(
+          key: scaffoldKey,
           backgroundColor: Colors.transparent,
+          endDrawer: MediaQuery.of(context).size.width <= 420.0
+              ? SideMenu(service: service)
+              : null,
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -45,7 +52,9 @@ class _IndexScreenState extends State<IndexScreen> {
                         fit: BoxFit.contain,
                         width: 200,
                       ),
-                      ResponsiveNavigationBar(),
+                      ResponsiveNavigationBar(
+                        scaffoldKey: scaffoldKey,
+                      ),
                     ],
                   ),
                 ),
@@ -79,3 +88,4 @@ class _IndexScreenState extends State<IndexScreen> {
     );
   }
 }
+

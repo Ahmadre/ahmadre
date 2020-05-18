@@ -110,6 +110,33 @@ class ProjectScreen extends StatelessWidget {
                 title: Text('AStA App'),
                 trailing: Icon(Icons.open_in_new),
               ),
+              SizedBox(
+                height: 10,
+              ),
+              ListTile(
+                onTap: () async {
+                  final String luitsapp = 'https://pulmonary-intensive-care-unit.firebaseapp.com/#/';
+                  if (await canLaunch(luitsapp)) {
+                    launch(
+                      luitsapp,
+                      enableDomStorage: true,
+                      enableJavaScript: true,
+                    );
+                  }
+                },
+                contentPadding: EdgeInsets.zero,
+                leading: Container(
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.only(left: 2),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                  ),
+                  child: FlutterLogo(),
+                ),
+                title: Text('LUITS App Beta (eHealth Wiki)'),
+                trailing: Icon(Icons.open_in_new),
+              ),
             ],
           ),
         ),

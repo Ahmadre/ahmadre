@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tinycolor/tinycolor.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -107,6 +106,48 @@ class ContactScreen extends StatelessWidget {
                     color: Colors.blue.shade500,
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      width: 1.0,
+                      color: TinyColor(Theme.of(context).scaffoldBackgroundColor).isLight()
+                          ? Colors.black54
+                          : Colors.white54,
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 10),
+                  child: Text(
+                    'Legal Notice',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text('Breath of the Wild illustration (404 Page) by:'),
+              SizedBox(
+                height: 10,
+              ),
+              ListTile(
+                onTap: () async {
+                  final url = 'https://dribbble.com/marie_bergeron/shots';
+                  if (await canLaunch(url)) {
+                    launch(url);
+                  }
+                },
+                leading: Image.network(
+                    'https://images.squarespace-cdn.com/content/54da5152e4b04e41c0eb77f1/1431611474439-NRMD6DDOOAYIGJ0C27IG/logo-150px.png?content-type=image%2Fgif'),
+                title: Text('Marie Bergeron'),
+                trailing: Icon(Icons.open_in_new),
               ),
             ],
           ),

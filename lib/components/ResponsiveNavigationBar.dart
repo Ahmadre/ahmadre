@@ -8,7 +8,7 @@ final kMobileBreakpoint = 420.0;
 class ResponsiveNavigationBar extends StatefulWidget {
   const ResponsiveNavigationBar({
     Key key,
-    this.buttonColor = Colors.white,
+    this.buttonColor = Colors.black,
     this.scaffoldKey,
   }) : super(key: key);
 
@@ -20,7 +20,6 @@ class ResponsiveNavigationBar extends StatefulWidget {
 }
 
 class _ResponsiveNavigationBarState extends State<ResponsiveNavigationBar> {
-  
   @override
   Widget build(BuildContext context) {
     final service = Provider.of<AppService>(context, listen: false);
@@ -28,7 +27,10 @@ class _ResponsiveNavigationBarState extends State<ResponsiveNavigationBar> {
     return SingleChildScrollView(
       child: MediaQuery.of(context).size.width <= kMobileBreakpoint
           ? IconButton(
-              icon: Icon(Icons.menu),
+              icon: Icon(
+                Icons.menu,
+                color: widget.buttonColor,
+              ),
               onPressed: () => widget.scaffoldKey.currentState.openEndDrawer(),
             )
           : MediaQuery.of(context).size.width <= kTabletBreakpoint
@@ -64,6 +66,7 @@ class _ResponsiveNavigationBarState extends State<ResponsiveNavigationBar> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       onPressed: () => service.content = 'projects',
+                      splashColor: Colors.black12,
                       child: Text(
                         'Projects',
                         style: TextStyle(
@@ -76,6 +79,7 @@ class _ResponsiveNavigationBarState extends State<ResponsiveNavigationBar> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       onPressed: () => service.content = 'about',
+                      splashColor: Colors.black12,
                       child: Text(
                         'About',
                         style: TextStyle(
@@ -88,6 +92,7 @@ class _ResponsiveNavigationBarState extends State<ResponsiveNavigationBar> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       onPressed: () => service.content = 'contact',
+                      splashColor: Colors.black12,
                       child: Text(
                         'Contact',
                         style: TextStyle(

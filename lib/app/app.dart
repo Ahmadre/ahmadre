@@ -40,7 +40,7 @@ class AhmadreAppState extends State<AhmadreApp> {
         animation: widget.service,
         builder: (context, child) => MaterialApp(
           navigatorKey: navigatorKey,
-          title: 'Ahmadre',
+          title: 'A H M A D R E',
           initialRoute: '/',
           routes: routes,
           onUnknownRoute: (settings) => MaterialPageRoute(

@@ -7,11 +7,22 @@
         {
             "name": "Flutter Debug",
             "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "Flutter Release",
+            "request": "launch",
+            "type": "dart",
+            "args": ["--release"]
+        },
+        {
+            "name": "Flutter Debug (with SKIA)",
+            "request": "launch",
             "type": "dart",
             "args": ["--dart-define=FLUTTER_WEB_USE_SKIA=true"]
         },
         {
-            "name": "Flutter Release",
+            "name": "Flutter Release (with SKIA)",
             "request": "launch",
             "type": "dart",
             "args": ["--release", "--dart-define=FLUTTER_WEB_USE_SKIA=true"]

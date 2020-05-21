@@ -8,8 +8,8 @@ final kMobileBreakpoint = 420.0;
 class ResponsiveNavigationBar extends StatefulWidget {
   const ResponsiveNavigationBar({
     Key key,
-    this.buttonColor = Colors.black,
-    this.scaffoldKey,
+    @required this.scaffoldKey,
+    this.buttonColor = Colors.black,    
   }) : super(key: key);
 
   final Color buttonColor;

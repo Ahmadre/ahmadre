@@ -139,13 +139,11 @@ class ContactScreen extends StatelessWidget {
               ),
               ListTile(
                 title: Text('Rebar Ahmad'),
-                subtitle: Text(
-                  '''
+                subtitle: Text('''
 Kuthsweg 40
 40231 Düsseldorf
 Germany
-                  '''
-                ),
+                  '''),
               ),
               SizedBox(
                 height: 20,
@@ -161,8 +159,7 @@ Germany
                     launch(url);
                   }
                 },
-                leading: Image.network(
-                    'https://images.squarespace-cdn.com/content/54da5152e4b04e41c0eb77f1/1431611474439-NRMD6DDOOAYIGJ0C27IG/logo-150px.png?content-type=image%2Fgif'),
+                leading: Image.asset('assets/images/mbergeron.gif'),
                 title: Text('Marie Bergeron'),
                 trailing: Icon(Icons.open_in_new),
               ),

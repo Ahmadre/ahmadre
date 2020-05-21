@@ -133,6 +133,23 @@ class ContactScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
+              Text('Responsible for the content according to §5 TMG (german law):'),
+              SizedBox(
+                height: 10,
+              ),
+              ListTile(
+                title: Text('Rebar Ahmad'),
+                subtitle: Text(
+                  '''
+Kuthsweg 40
+40231 Düsseldorf
+Germany
+                  '''
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               Text('Breath of the Wild illustration (404 Page) by:'),
               SizedBox(
                 height: 10,

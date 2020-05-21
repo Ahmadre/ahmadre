@@ -44,6 +44,7 @@ class PickerHomeScreen extends StatefulWidget {
 class _PickerHomeScreenState extends State<PickerHomeScreen> {
   Icon _icon;
   bool isAdaptive = true;
+  bool showTooltips = false;
 
   IconPack selectedPack = IconPack.cupertino;
   List<PopupMenuEntry<IconPack>> packOptions = [];
@@ -78,7 +79,7 @@ class _PickerHomeScreenState extends State<PickerHomeScreen> {
     IconData icon = await FlutterIconPicker.showIconPicker(
       context,
       adaptiveDialog: isAdaptive,
-      iconPickerShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      showTooltips: showTooltips,
       iconPackMode: selectedPack,
     );
 
@@ -160,13 +161,30 @@ class _PickerHomeScreenState extends State<PickerHomeScreen> {
       ),
       bottomSheet: Container(
         color: Colors.blue.shade500,
-        child: SwitchListTile.adaptive(
-          title: Text(
-            'Adaptive dialog',
-            style: TextStyle(color: Colors.white),
-          ),
-          value: isAdaptive,
-          onChanged: (val) => setState(() => isAdaptive = val),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Flexible(
+              child: SwitchListTile.adaptive(
+                title: Text(
+                  'Show Tooltips',
+                  style: TextStyle(color: Colors.white),
+                ),
+                value: showTooltips,
+                onChanged: (val) => setState(() => showTooltips = val),
+              ),
+            ),
+            Flexible(
+              child: SwitchListTile.adaptive(                
+                title: Text(
+                  'Adaptive dialog',
+                  style: TextStyle(color: Colors.white),
+                ),
+                value: isAdaptive,
+                onChanged: (val) => setState(() => isAdaptive = val),
+              ),
+            ),
+          ],
         ),
       ),
     );

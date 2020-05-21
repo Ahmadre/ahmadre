@@ -2,7 +2,6 @@ import 'package:app/app/theme.dart';
 import 'package:app/components/AppReferences.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tinycolor/tinycolor.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SRIAppScreen extends StatefulWidget {
@@ -151,8 +150,8 @@ In order to meet the demand for a native app with a low budget, Google's newest 
                           avatar: Container(
                             decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
-                            child: Image.network(
-                              'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/1920px-GraphQL_Logo.svg.png',
+                            child: Image.asset(
+                              'assets/images/graphql.png',
                               height: 20,
                             ),
                           ),
@@ -171,8 +170,8 @@ In order to meet the demand for a native app with a low budget, Google's newest 
                           avatar: Container(
                             decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
-                            child: Image.network(
-                              'https://avatars2.githubusercontent.com/u/11098337?s=200&v=4',
+                            child: Image.asset(
+                              'assets/images/fastlane.png',
                               height: 20,
                             ),
                           ),
@@ -191,8 +190,8 @@ In order to meet the demand for a native app with a low budget, Google's newest 
                           avatar: Container(
                             decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(3),
-                            child: Image.network(
-                              'https://jwt.io/img/pic_logo.svg',
+                            child: Image.asset(
+                              'assets/images/jwt.png',
                               height: 20,
                             ),
                           ),
@@ -352,13 +351,9 @@ In order to meet the demand for a native app with a low budget, Google's newest 
                           avatar: Container(
                             decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
-                            child: Transform.scale(
-                              scale: .8,
-                              child: Icon(
-                                FontAwesomeIcons.database,
-                                color: Colors.green.shade800,
-                                size: 20,
-                              ),
+                            child: Image.asset(
+                              'assets/images/mongodb.png',
+                              height: 20,
                             ),
                           ),
                         ),

@@ -93,8 +93,8 @@ class ProjectScreen extends StatelessWidget {
                     shape: BoxShape.circle,
                     color: Colors.white,
                   ),
-                  child: Image.network(
-                    'https://asta.robsphere.com/assets/icon/favicon.ico',
+                  child: Image.asset(
+                    'assets/images/astalogo.ico',
                     width: 30,
                   ),
                 ),

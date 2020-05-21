@@ -127,8 +127,8 @@ This app will provide texts, videos and images in the form of instructions and w
                           avatar: Container(
                             decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
-                            child: Image.network(
-                              'https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_96dp.png',
+                            child: Image.asset(
+                              'assets/images/firebase.png',
                               height: 20,
                             ),
                           ),
@@ -147,8 +147,8 @@ This app will provide texts, videos and images in the form of instructions and w
                           avatar: Container(
                             decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
-                            child: Image.network(
-                              'https://avatars2.githubusercontent.com/u/11098337?s=200&v=4',
+                            child: Image.asset(
+                              'assets/images/fastlane.png',
                               height: 20,
                             ),
                           ),

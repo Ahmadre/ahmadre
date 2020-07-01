@@ -78,6 +78,25 @@ class ProjectScreen extends StatelessWidget {
                 height: 10,
               ),
               ListTile(
+                onTap: () => Navigator.pushNamed(context, '/bestsignapp'),
+                contentPadding: EdgeInsets.zero,
+                leading: Container(
+                  padding: EdgeInsets.only(left: 7, top: 10, bottom: 10, right: 5),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                  ),
+                  child: Image.asset(
+                    'assets/images/bestsign_logo.png',
+                    height: 35,
+                  ),
+                ),
+                title: Text('BestSign'),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ListTile(
                 onTap: () => Navigator.pushNamed(context, '/telexiomapp'),
                 contentPadding: EdgeInsets.zero,
                 leading: Container(

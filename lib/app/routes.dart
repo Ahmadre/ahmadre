@@ -1,8 +1,9 @@
 import 'package:app/screens/FlutterIconPicker/IconPickerScreen.dart';
 import 'package:app/screens/IndexScreen.dart';
+import 'package:app/screens/ProjectScreen/Projects/BestSignAppScreen.dart';
 import 'package:app/screens/ProjectScreen/Projects/LUITSScreen.dart';
 import 'package:app/screens/ProjectScreen/Projects/SRIAppScreen.dart';
-import 'package:app/screens/ProjectScreen/Projects/TelexiomApp.dart';
+import 'package:app/screens/ProjectScreen/Projects/TelexiomAppScreen.dart';
 import 'package:flutter/material.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
@@ -11,4 +12,5 @@ Map<String, Widget Function(BuildContext)> routes = {
  '/sriapp': (context) => SRIAppScreen(),
  '/luitsapp': (context) => LUITSScreen(),
  '/telexiomapp': (context) => TelexiomAppScreen(),
+ '/bestsignapp': (context) => BestSignAppScreen(),
 };

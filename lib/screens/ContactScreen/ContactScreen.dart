@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tinycolor/tinycolor.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -138,8 +139,9 @@ class ContactScreen extends StatelessWidget {
                 height: 10,
               ),
               ListTile(
-                title: Text('Rebar Ahmad'),
-                subtitle: Text('''
+                mouseCursor: MouseCursor.defer,
+                title: SelectableText('Rebar Ahmad'),
+                subtitle: SelectableText('''
 Kuthsweg 40
 40231 Düsseldorf
 Germany

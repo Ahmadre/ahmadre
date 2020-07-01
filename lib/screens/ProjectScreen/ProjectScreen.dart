@@ -140,6 +140,36 @@ class ProjectScreen extends StatelessWidget {
                 title: Text('AStA App'),
                 trailing: Icon(Icons.open_in_new),
               ),
+              SizedBox(
+                height: 10,
+              ),
+              ListTile(
+                onTap: () async {
+                  final String astaapp = 'http://asta.hn/';
+                  if (await canLaunch(astaapp)) {
+                    launch(
+                      astaapp,
+                      enableDomStorage: true,
+                      enableJavaScript: true,
+                    );
+                  }
+                },
+                contentPadding: EdgeInsets.zero,
+                leading: Container(
+                  padding: EdgeInsets.all(7),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                  ),
+                  child: Image.asset(
+                    'assets/images/asta_page.png',
+                    width: 30,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                title: Text('AStA.HN Website'),
+                trailing: Icon(Icons.open_in_new),
+              ),
             ],
           ),
         ),

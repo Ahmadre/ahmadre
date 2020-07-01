@@ -27,9 +27,11 @@ class ProjectScreen extends StatelessWidget {
                   border: Border(
                     bottom: BorderSide(
                       width: 1.0,
-                      color: TinyColor(Theme.of(context).scaffoldBackgroundColor).isLight()
-                          ? Colors.black54
-                          : Colors.white54,
+                      color:
+                          TinyColor(Theme.of(context).scaffoldBackgroundColor)
+                                  .isLight()
+                              ? Colors.black54
+                              : Colors.white54,
                     ),
                   ),
                 ),
@@ -76,6 +78,43 @@ class ProjectScreen extends StatelessWidget {
                 height: 10,
               ),
               ListTile(
+                onTap: () => Navigator.pushNamed(context, '/telexiomapp'),
+                contentPadding: EdgeInsets.zero,
+                leading: Container(
+                  padding: EdgeInsets.only(left: 7, top: 10, bottom: 10, right: 5),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                  ),
+                  child: Image.asset(
+                    'assets/images/telexiom_logo.png',
+                    height: 35,
+                  ),
+                ),
+                title: Text('telexiom App'),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ListTile(
+                onTap: () => Navigator.pushNamed(context, '/luitsapp'),
+                contentPadding: EdgeInsets.zero,
+                leading: Container(
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.only(left: 2),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                  ),
+                  child: FlutterLogo(),
+                ),
+                title: Text('LUITS App Beta (eHealth Wiki)'),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ListTile(
                 onTap: () async {
                   final String astaapp = 'https://asta.robsphere.com/';
                   if (await canLaunch(astaapp)) {
@@ -100,24 +139,6 @@ class ProjectScreen extends StatelessWidget {
                 ),
                 title: Text('AStA App'),
                 trailing: Icon(Icons.open_in_new),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              ListTile(
-                onTap: () => Navigator.pushNamed(context, '/luitsapp'),
-                contentPadding: EdgeInsets.zero,
-                leading: Container(
-                  padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.only(left: 2),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                  ),
-                  child: FlutterLogo(),
-                ),
-                title: Text('LUITS App Beta (eHealth Wiki)'),
-                trailing: Icon(Icons.arrow_forward_ios),
               ),
             ],
           ),

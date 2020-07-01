@@ -99,7 +99,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                         ActionChip(
                           label: Text('Ionic/Angular'),
                           onPressed: () async {
-                            if (await canLaunch('https://ionicframework.com/')) {
+                            if (await canLaunch(
+                                'https://ionicframework.com/')) {
                               launch(
                                 'https://ionicframework.com/',
                                 enableDomStorage: true,
@@ -108,7 +109,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Image.asset(
                               'assets/images/ionic.png',
@@ -119,7 +121,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                         ActionChip(
                           label: Text('Cordova'),
                           onPressed: () async {
-                            if (await canLaunch('https://cordova.apache.org/')) {
+                            if (await canLaunch(
+                                'https://cordova.apache.org/')) {
                               launch(
                                 'https://cordova.apache.org/',
                                 enableDomStorage: true,
@@ -128,7 +131,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Image.asset(
                               'assets/images/cordova.png',
@@ -148,7 +152,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Icon(
                               FontAwesomeIcons.nodeJs,
@@ -169,7 +174,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(3),
                             child: Image.asset(
                               'assets/images/jwt.png',
@@ -180,7 +186,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                         ActionChip(
                           label: Text('Secure by Design'),
                           onPressed: () async {
-                            if (await canLaunch('https://en.wikipedia.org/wiki/Secure_by_design')) {
+                            if (await canLaunch(
+                                'https://en.wikipedia.org/wiki/Secure_by_design')) {
                               launch(
                                 'https://en.wikipedia.org/wiki/Secure_by_design',
                                 enableDomStorage: true,
@@ -189,7 +196,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Icon(
                               Icons.lock_outline,
@@ -210,7 +218,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Transform.scale(
                               scale: .8,
@@ -225,7 +234,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                         ActionChip(
                           label: Text('Typescript'),
                           onPressed: () async {
-                            if (await canLaunch('https://www.typescriptlang.org/')) {
+                            if (await canLaunch(
+                                'https://www.typescriptlang.org/')) {
                               launch(
                                 'https://www.typescriptlang.org/',
                                 enableDomStorage: true,
@@ -234,18 +244,21 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-                            padding: EdgeInsets.all(2),
-                            child: Image.asset(
-                              'assets/images/ts.png',
-                              height: 20,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/ts.png'),
+                                fit: BoxFit.contain,
+                              ),
+                              shape: BoxShape.circle,
                             ),
+                            padding: EdgeInsets.all(2),
                           ),
                         ),
                         ActionChip(
                           label: Text('Java'),
                           onPressed: () async {
-                            if (await canLaunch('https://www.w3schools.com/java/java_intro.asp')) {
+                            if (await canLaunch(
+                                'https://www.w3schools.com/java/java_intro.asp')) {
                               launch(
                                 'https://www.w3schools.com/java/java_intro.asp',
                                 enableDomStorage: true,
@@ -254,7 +267,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Transform.scale(
                               scale: .8,
@@ -278,12 +292,13 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Icon(
                               FontAwesomeIcons.database,
                               color: Colors.black54,
-                              size: 20,
+                              size: 15,
                             ),
                           ),
                         ),
@@ -311,7 +326,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                     ),
                   ),
                   AppReferences(
-                    androidURL: 'https://play.google.com/store/apps/details?id=com.telexiom.app',
+                    androidURL:
+                        'https://play.google.com/store/apps/details?id=com.telexiom.app',
                   ),
                   SizedBox(
                     height: 20,

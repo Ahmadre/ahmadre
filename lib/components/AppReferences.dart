@@ -11,7 +11,8 @@ class AppReferences extends StatefulWidget {
   }) {
     key = key;
     if (webURL == null && androidURL == null && iosURL == null) {
-      AssertionError('You must provide minimum one URL to create AppReferences.');
+      AssertionError(
+          'You must provide minimum one URL to create AppReferences.');
     }
   }
 
@@ -64,10 +65,13 @@ class _AppReferencesState extends State<AppReferences> {
               ),
               child: Row(
                 children: [
-                  Icon(
-                    FontAwesomeIcons.googlePlay,
-                    color: Colors.white,
-                    size: 30,
+                  Transform.translate(
+                    offset: Offset(0.0, -2.5),
+                    child: Icon(
+                      FontAwesomeIcons.googlePlay,
+                      color: Colors.white,
+                      size: 30,
+                    ),
                   ),
                   SizedBox(
                     width: 20,
@@ -111,10 +115,13 @@ class _AppReferencesState extends State<AppReferences> {
               ),
               child: Row(
                 children: [
-                  Icon(
-                    FontAwesomeIcons.apple,
-                    color: Colors.white,
-                    size: 30,
+                  Transform.translate(
+                    offset: Offset(0.0, -2.5),
+                    child: Icon(
+                      FontAwesomeIcons.apple,
+                      color: Colors.white,
+                      size: 30,
+                    ),
                   ),
                   SizedBox(
                     width: 20,

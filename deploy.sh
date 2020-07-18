@@ -111,7 +111,7 @@ else
     if [ "$1" = "web" ]; then
         echo '🕗 Processing Deployment for Mataku App for '$1'...'
 
-        flutter build web --release --dart-define=FLUTTER_WEB_USE_SKIA=true
+        flutter build web --release
 
         cd build/web/
 
@@ -151,7 +151,7 @@ else
 
             echo '🕗 Processing Deployment for Mataku App for '$1'...'
 
-            flutter build web --release --dart-define=FLUTTER_WEB_USE_SKIA=true
+            flutter build web --release
             cd build/web/
             /usr/local/bin/rsync -ru --exclude=firebase-debug.log --exclude=.firebase --exclude=functions/ --exclude=public/ --exclude=firebase.json --exclude=.gitignore --exclude=.firebaserc * ../../web/public
             cd ../../web

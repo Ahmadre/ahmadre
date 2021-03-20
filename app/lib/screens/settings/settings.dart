@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:app/app/service.dart';
 import 'package:app/screens/settings/BrightnessTiles.dart';
 import 'package:app/screens/settings/LanguageTiles.dart';
-import 'package:app/services/i18n/MatakuLocalizations.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -53,7 +52,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
         backgroundColor: Colors.transparent,
         textTheme: Theme.of(context).textTheme.copyWith(
               headline6: Theme.of(context).textTheme.headline6.copyWith(
-                    color: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? Colors.black
+                        : Colors.white,
                   ),
             ),
         title: Text(
@@ -155,7 +156,7 @@ class _BrightnessDialogState extends State<_BrightnessDialog> {
                 child: SizedBox(
                   width: double.infinity,
                   height: 50,
-                  child: FlatButton(
+                  child: TextButton(
                     child: Text(
                       'Close',
                       style: const TextStyle(
@@ -228,7 +229,7 @@ class _LanguageDialogState extends State<_LanguageDialog> {
                 child: SizedBox(
                   width: double.infinity,
                   height: 50,
-                  child: FlatButton(
+                  child: TextButton(
                     child: Text(
                       'Close',
                       style: const TextStyle(

@@ -1,5 +1,4 @@
 import 'package:app/services/AppManager.dart';
-import 'package:app/services/i18n/MatakuLocalizations.dart';
 import 'package:flutter/material.dart';
 
 class BrightnessTiles extends StatefulWidget {

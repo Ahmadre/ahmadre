@@ -1,4 +1,3 @@
-import 'package:app/services/i18n/MatakuLocalizations.dart';
 import 'package:flutter/material.dart';
 
 class LanguageTiles extends StatefulWidget {

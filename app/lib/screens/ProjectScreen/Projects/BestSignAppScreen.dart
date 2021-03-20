@@ -188,26 +188,27 @@ Security relevant APIs were tested by mocking. This allowed modular development 
                           ),
                         ),
                         ActionChip(
-                          label: Text('Typescript'),
+                          label: Text('Javascript'),
                           onPressed: () async {
-                            if (await canLaunch(
-                                'https://www.typescriptlang.org/')) {
+                            if (await canLaunch('https://www.w3schools.com/js/')) {
                               launch(
-                                'https://www.typescriptlang.org/',
+                                'https://www.w3schools.com/js/',
                                 enableDomStorage: true,
                                 enableJavaScript: true,
                               );
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('assets/images/ts.png'),
-                                fit: BoxFit.contain,
-                              ),
-                              shape: BoxShape.circle,
-                            ),
+                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
+                            child: Transform.scale(
+                              scale: .8,
+                              child: Icon(
+                                FontAwesomeIcons.js,
+                                color: Colors.yellow.shade800,
+                                size: 20,
+                              ),
+                            ),
                           ),
                         ),
                         ActionChip(

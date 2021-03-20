@@ -91,8 +91,8 @@ Security relevant APIs were tested by mocking. This allowed modular development 
                   Container(
                     padding: EdgeInsets.all(20),
                     child: Wrap(
-                      spacing: 15,
-                      runSpacing: 0,
+                      spacing: 10,
+                      runSpacing: 10,
                       crossAxisAlignment: WrapCrossAlignment.center,
                       alignment: WrapAlignment.center,
                       children: [
@@ -190,7 +190,8 @@ Security relevant APIs were tested by mocking. This allowed modular development 
                         ActionChip(
                           label: Text('Javascript'),
                           onPressed: () async {
-                            if (await canLaunch('https://www.w3schools.com/js/')) {
+                            if (await canLaunch(
+                                'https://www.w3schools.com/js/')) {
                               launch(
                                 'https://www.w3schools.com/js/',
                                 enableDomStorage: true,
@@ -199,7 +200,8 @@ Security relevant APIs were tested by mocking. This allowed modular development 
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Transform.scale(
                               scale: .8,
@@ -285,7 +287,8 @@ Security relevant APIs were tested by mocking. This allowed modular development 
                     ),
                   ),
                   AppReferences(
-                    iosURL: 'https://apps.apple.com/de/app/postbank-bestsign-app/id1442251022',
+                    iosURL:
+                        'https://apps.apple.com/de/app/postbank-bestsign-app/id1442251022',
                     androidURL:
                         'https://play.google.com/store/apps/details?id=de.postbank.bestsign',
                   ),

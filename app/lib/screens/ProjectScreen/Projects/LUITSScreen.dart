@@ -91,8 +91,8 @@ This app will provide texts, videos and images in the form of instructions and w
                   Container(
                     padding: EdgeInsets.all(20),
                     child: Wrap(
-                      spacing: 15,
-                      runSpacing: 0,
+                      spacing: 10,
+                      runSpacing: 10,
                       crossAxisAlignment: WrapCrossAlignment.center,
                       alignment: WrapAlignment.center,
                       children: [
@@ -108,7 +108,8 @@ This app will provide texts, videos and images in the form of instructions and w
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: FlutterLogo(),
                           ),
@@ -116,7 +117,8 @@ This app will provide texts, videos and images in the form of instructions and w
                         ActionChip(
                           label: Text('Firebase'),
                           onPressed: () async {
-                            if (await canLaunch('https://firebase.google.com/')) {
+                            if (await canLaunch(
+                                'https://firebase.google.com/')) {
                               launch(
                                 'https://firebase.google.com/',
                                 enableDomStorage: true,
@@ -125,7 +127,8 @@ This app will provide texts, videos and images in the form of instructions and w
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Image.asset(
                               'assets/images/firebase.png',
@@ -145,7 +148,8 @@ This app will provide texts, videos and images in the form of instructions and w
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Image.asset(
                               'assets/images/fastlane.png',
@@ -165,7 +169,8 @@ This app will provide texts, videos and images in the form of instructions and w
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Icon(
                               Icons.security,
@@ -177,7 +182,8 @@ This app will provide texts, videos and images in the form of instructions and w
                         ActionChip(
                           label: Text('Secure by Design'),
                           onPressed: () async {
-                            if (await canLaunch('https://en.wikipedia.org/wiki/Secure_by_design')) {
+                            if (await canLaunch(
+                                'https://en.wikipedia.org/wiki/Secure_by_design')) {
                               launch(
                                 'https://en.wikipedia.org/wiki/Secure_by_design',
                                 enableDomStorage: true,
@@ -186,7 +192,8 @@ This app will provide texts, videos and images in the form of instructions and w
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Icon(
                               Icons.lock_outline,
@@ -198,7 +205,8 @@ This app will provide texts, videos and images in the form of instructions and w
                         ActionChip(
                           label: Text('Azure DevOps'),
                           onPressed: () async {
-                            if (await canLaunch('https://azure.microsoft.com/de-de/services/devops/')) {
+                            if (await canLaunch(
+                                'https://azure.microsoft.com/de-de/services/devops/')) {
                               launch(
                                 'https://azure.microsoft.com/de-de/services/devops/',
                                 enableDomStorage: true,
@@ -207,7 +215,8 @@ This app will provide texts, videos and images in the form of instructions and w
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Transform.scale(
                               scale: .8,
@@ -231,7 +240,8 @@ This app will provide texts, videos and images in the form of instructions and w
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Transform.scale(
                               scale: .8,
@@ -246,7 +256,8 @@ This app will provide texts, videos and images in the form of instructions and w
                         ActionChip(
                           label: Text('Javascript'),
                           onPressed: () async {
-                            if (await canLaunch('https://www.w3schools.com/js/')) {
+                            if (await canLaunch(
+                                'https://www.w3schools.com/js/')) {
                               launch(
                                 'https://www.w3schools.com/js/',
                                 enableDomStorage: true,
@@ -255,7 +266,8 @@ This app will provide texts, videos and images in the form of instructions and w
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Transform.scale(
                               scale: .8,
@@ -270,7 +282,8 @@ This app will provide texts, videos and images in the form of instructions and w
                         ActionChip(
                           label: Text('Java'),
                           onPressed: () async {
-                            if (await canLaunch('https://www.w3schools.com/java/java_intro.asp')) {
+                            if (await canLaunch(
+                                'https://www.w3schools.com/java/java_intro.asp')) {
                               launch(
                                 'https://www.w3schools.com/java/java_intro.asp',
                                 enableDomStorage: true,
@@ -279,7 +292,8 @@ This app will provide texts, videos and images in the form of instructions and w
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Transform.scale(
                               scale: .8,
@@ -294,7 +308,8 @@ This app will provide texts, videos and images in the form of instructions and w
                         ActionChip(
                           label: Text('Swift'),
                           onPressed: () async {
-                            if (await canLaunch('https://developer.apple.com/swift/')) {
+                            if (await canLaunch(
+                                'https://developer.apple.com/swift/')) {
                               launch(
                                 'https://developer.apple.com/swift/',
                                 enableDomStorage: true,
@@ -303,7 +318,8 @@ This app will provide texts, videos and images in the form of instructions and w
                             }
                           },
                           avatar: Container(
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Transform.scale(
                               scale: .8,
@@ -339,7 +355,8 @@ This app will provide texts, videos and images in the form of instructions and w
                     ),
                   ),
                   AppReferences(
-                    webURL: 'https://pulmonary-intensive-care-unit.firebaseapp.com/#/',
+                    webURL:
+                        'https://pulmonary-intensive-care-unit.firebaseapp.com/#/',
                   ),
                   SizedBox(
                     height: 20,

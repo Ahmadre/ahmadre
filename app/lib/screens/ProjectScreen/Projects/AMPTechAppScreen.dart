@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class SRIAppScreen extends StatefulWidget {
-  const SRIAppScreen({Key key}) : super(key: key);
+class AMPTechAppScreen extends StatefulWidget {
+  const AMPTechAppScreen({Key key}) : super(key: key);
 
   @override
-  _SRIAppScreenState createState() => _SRIAppScreenState();
+  _AMPTechAppScreenState createState() => _AMPTechAppScreenState();
 }
 
-class _SRIAppScreenState extends State<SRIAppScreen> {
+class _AMPTechAppScreenState extends State<AMPTechAppScreen> {
   @override
   void initState() {
     super.initState();
@@ -23,7 +23,7 @@ class _SRIAppScreenState extends State<SRIAppScreen> {
       data: AppTheme.light,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('SRI App'),
+          title: Text('Secret App'),
           iconTheme: Theme.of(context).iconTheme.copyWith(color: Colors.white),
         ),
         body: Center(
@@ -39,15 +39,14 @@ class _SRIAppScreenState extends State<SRIAppScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.only(
-                      top: 20,
-                    ),
-                    child: Image.asset(
-                      'assets/images/atem_logo.png',
-                      height: 100,
-                    ),
-                  ),
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(
+                        top: 20,
+                      ),
+                      child: Text(
+                        '?',
+                        textScaleFactor: 5.0,
+                      )),
                   Container(
                     height: 30,
                     decoration: BoxDecoration(
@@ -66,9 +65,9 @@ class _SRIAppScreenState extends State<SRIAppScreen> {
                   Container(
                     padding: EdgeInsets.all(20),
                     child: Text('''
-Management and development of a platform independent eHealth application for Android/iOS and browsers based on Flutter. 
+As a software-engineer I created a concept for a Flutter app based on Kubernetes to cover over 100k users.
 
-The customer and doctor from the Cologne Lung Clinic in Merheim is conducting a research project on patients with lung disease. 
+The app should be a third-party app to control your vehicles and display your car in a 3D-Model.
 
 This project resulted in concepts and drafts for an app that digitizes questionnaires and makes the evaluations available to the research manager. 
 
@@ -117,33 +116,37 @@ In order to meet the demand for a native app with a low budget, Google's newest 
                           ),
                         ),
                         ActionChip(
-                          label: Text('NodeJS/Express'),
+                          label: Text('Unity 3D'),
                           onPressed: () async {
-                            if (await canLaunch('https://nodejs.org/')) {
+                            if (await canLaunch('https://unity.com')) {
                               launch(
-                                'https://nodejs.org/',
+                                'https://unity.com',
                                 enableDomStorage: true,
                                 enableJavaScript: true,
                               );
                             }
                           },
-                          avatar: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.white, shape: BoxShape.circle),
-                            padding: EdgeInsets.all(2),
-                            child: Icon(
-                              FontAwesomeIcons.nodeJs,
-                              color: Colors.green,
-                              size: 20,
+                          avatar: ClipOval(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white, shape: BoxShape.circle),
+                              padding: EdgeInsets.all(2),
+                              child: Transform.scale(
+                                scale: 1,
+                                child: Image.asset(
+                                  'assets/images/unity.png',
+                                  height: 20,
+                                ),
+                              ),
                             ),
                           ),
                         ),
                         ActionChip(
-                          label: Text('GraphQL'),
+                          label: Text('Kubernetes'),
                           onPressed: () async {
-                            if (await canLaunch('https://graphql.org/')) {
+                            if (await canLaunch('https://kubernetes.io/de/')) {
                               launch(
-                                'https://graphql.org/',
+                                'https://kubernetes.io/de/',
                                 enableDomStorage: true,
                                 enableJavaScript: true,
                               );
@@ -154,7 +157,7 @@ In order to meet the demand for a native app with a low budget, Google's newest 
                                 color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
                             child: Image.asset(
-                              'assets/images/graphql.png',
+                              'assets/images/k8s.png',
                               height: 20,
                             ),
                           ),
@@ -225,32 +228,6 @@ In order to meet the demand for a native app with a low budget, Google's newest 
                           ),
                         ),
                         ActionChip(
-                          label: Text('Azure DevOps'),
-                          onPressed: () async {
-                            if (await canLaunch(
-                                'https://azure.microsoft.com/de-de/services/devops/')) {
-                              launch(
-                                'https://azure.microsoft.com/de-de/services/devops/',
-                                enableDomStorage: true,
-                                enableJavaScript: true,
-                              );
-                            }
-                          },
-                          avatar: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.white, shape: BoxShape.circle),
-                            padding: EdgeInsets.all(2),
-                            child: Transform.scale(
-                              scale: .8,
-                              child: Icon(
-                                FontAwesomeIcons.windows,
-                                color: Colors.blue.shade500,
-                                size: 20,
-                              ),
-                            ),
-                          ),
-                        ),
-                        ActionChip(
                           label: Text('Git'),
                           onPressed: () async {
                             if (await canLaunch('https://git-scm.com/')) {
@@ -276,12 +253,12 @@ In order to meet the demand for a native app with a low budget, Google's newest 
                           ),
                         ),
                         ActionChip(
-                          label: Text('Javascript'),
+                          label: Text('Spring Boot'),
                           onPressed: () async {
                             if (await canLaunch(
-                                'https://www.w3schools.com/js/')) {
+                                'https://spring.io/projects/spring-boot')) {
                               launch(
-                                'https://www.w3schools.com/js/',
+                                'https://spring.io/projects/spring-boot',
                                 enableDomStorage: true,
                                 enableJavaScript: true,
                               );
@@ -291,49 +268,19 @@ In order to meet the demand for a native app with a low budget, Google's newest 
                             decoration: BoxDecoration(
                                 color: Colors.white, shape: BoxShape.circle),
                             padding: EdgeInsets.all(2),
-                            child: Transform.scale(
-                              scale: .8,
-                              child: Icon(
-                                FontAwesomeIcons.js,
-                                color: Colors.yellow.shade800,
-                                size: 20,
-                              ),
+                            child: Image.asset(
+                              'assets/images/springboot.png',
+                              height: 20,
                             ),
                           ),
                         ),
                         ActionChip(
-                          label: Text('Java'),
+                          label: Text('Swift UI'),
                           onPressed: () async {
                             if (await canLaunch(
-                                'https://www.w3schools.com/java/java_intro.asp')) {
+                                'https://developer.apple.com/xcode/swiftui/')) {
                               launch(
-                                'https://www.w3schools.com/java/java_intro.asp',
-                                enableDomStorage: true,
-                                enableJavaScript: true,
-                              );
-                            }
-                          },
-                          avatar: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.white, shape: BoxShape.circle),
-                            padding: EdgeInsets.all(2),
-                            child: Transform.scale(
-                              scale: .8,
-                              child: Icon(
-                                FontAwesomeIcons.java,
-                                color: Colors.blue.shade800,
-                                size: 20,
-                              ),
-                            ),
-                          ),
-                        ),
-                        ActionChip(
-                          label: Text('Swift'),
-                          onPressed: () async {
-                            if (await canLaunch(
-                                'https://developer.apple.com/swift/')) {
-                              launch(
-                                'https://developer.apple.com/swift/',
+                                'https://developer.apple.com/xcode/swiftui/',
                                 enableDomStorage: true,
                                 enableJavaScript: true,
                               );
@@ -374,34 +321,32 @@ In order to meet the demand for a native app with a low budget, Google's newest 
                             ),
                           ),
                         ),
+                        ActionChip(
+                          label: Text('Tesla API'),
+                          onPressed: () async {
+                            if (await canLaunch('https://www.teslaapi.io/')) {
+                              launch(
+                                'https://www.teslaapi.io/',
+                                enableDomStorage: true,
+                                enableJavaScript: true,
+                              );
+                            }
+                          },
+                          avatar: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white, shape: BoxShape.circle),
+                            padding: EdgeInsets.all(2),
+                            child: Transform.scale(
+                              scale: .8,
+                              child: Image.asset(
+                                'assets/images/teslapi.png',
+                                height: 20,
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
-                  ),
-                  Container(
-                    height: 30,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(
-                          width: 1.0,
-                        ),
-                      ),
-                    ),
-                    margin: EdgeInsets.only(
-                      left: 20,
-                      right: 20,
-                      top: 20,
-                      bottom: 20,
-                    ),
-                    child: Text(
-                      'App References',
-                      textScaleFactor: 1.3,
-                    ),
-                  ),
-                  AppReferences(
-                    webURL: 'https://sriapp.telexiom.de/#/',
-                    androidURL:
-                        'https://play.google.com/store/apps/details?id=com.atemwegsliga.app',
-                    iosURL: 'https://apps.apple.com/sa/app/sri-q/id1470060698',
                   ),
                   SizedBox(
                     height: 20,

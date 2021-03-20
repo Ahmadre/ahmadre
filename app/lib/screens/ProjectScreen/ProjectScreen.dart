@@ -81,7 +81,8 @@ class ProjectScreen extends StatelessWidget {
                 onTap: () => Navigator.pushNamed(context, '/bestsignapp'),
                 contentPadding: EdgeInsets.zero,
                 leading: Container(
-                  padding: EdgeInsets.only(left: 7, top: 10, bottom: 10, right: 5),
+                  padding:
+                      EdgeInsets.only(left: 7, top: 10, bottom: 10, right: 5),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                   ),
@@ -100,7 +101,8 @@ class ProjectScreen extends StatelessWidget {
                 onTap: () => Navigator.pushNamed(context, '/telexiomapp'),
                 contentPadding: EdgeInsets.zero,
                 leading: Container(
-                  padding: EdgeInsets.only(left: 7, top: 10, bottom: 10, right: 5),
+                  padding:
+                      EdgeInsets.only(left: 7, top: 10, bottom: 10, right: 5),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                   ),
@@ -128,6 +130,32 @@ class ProjectScreen extends StatelessWidget {
                   child: FlutterLogo(),
                 ),
                 title: Text('LUITS App Beta (eHealth Wiki)'),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ListTile(
+                onTap: () => Navigator.pushNamed(context, '/amptechapp'),
+                contentPadding: EdgeInsets.zero,
+                leading: Container(
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.only(left: 2),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                  ),
+                  child: Container(
+                    height: 30,
+                    width: 30,
+                    alignment: Alignment.center,
+                    child: Text(
+                      '?',
+                      textScaleFactor: 2.0,
+                    ),
+                  ),
+                ),
+                title: Text('Secret App'),
                 trailing: Icon(Icons.arrow_forward_ios),
               ),
               SizedBox(

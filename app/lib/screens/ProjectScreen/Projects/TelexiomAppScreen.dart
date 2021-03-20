@@ -91,8 +91,8 @@ Through possible security measures such as symmetric encryption, 2FA, session ge
                   Container(
                     padding: EdgeInsets.all(20),
                     child: Wrap(
-                      spacing: 15,
-                      runSpacing: 0,
+                      spacing: 10,
+                      runSpacing: 10,
                       crossAxisAlignment: WrapCrossAlignment.center,
                       alignment: WrapAlignment.center,
                       children: [

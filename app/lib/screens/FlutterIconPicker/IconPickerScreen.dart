@@ -10,7 +10,8 @@ class FlutterIconPickerExample extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _FlutterIconPickerExampleState createState() => _FlutterIconPickerExampleState();
+  _FlutterIconPickerExampleState createState() =>
+      _FlutterIconPickerExampleState();
 }
 
 class _FlutterIconPickerExampleState extends State<FlutterIconPickerExample> {
@@ -60,11 +61,14 @@ class _PickerHomeScreenState extends State<PickerHomeScreen> {
   void loadOptions() {
     packOptions = [];
     packOptions.addAll([
-      PopupMenuItem<IconPack>(value: IconPack.material, child: Text('Material')),
-      PopupMenuItem<IconPack>(value: IconPack.cupertino, child: Text('Cupertino')),
-      PopupMenuItem<IconPack>(value: IconPack.materialOutline, child: Text('Material Outline')),
-      PopupMenuItem<IconPack>(value: IconPack.fontAwesomeIcons, child: Text('Font Awesome')),
-      PopupMenuItem<IconPack>(value: IconPack.lineAwesomeIcons, child: Text('Line Awesome')),
+      PopupMenuItem<IconPack>(
+          value: IconPack.material, child: Text('Material')),
+      PopupMenuItem<IconPack>(
+          value: IconPack.cupertino, child: Text('Cupertino')),
+      PopupMenuItem<IconPack>(
+          value: IconPack.fontAwesomeIcons, child: Text('Font Awesome')),
+      PopupMenuItem<IconPack>(
+          value: IconPack.lineAwesomeIcons, child: Text('Line Awesome')),
     ]);
     setState(() {});
   }
@@ -103,7 +107,7 @@ class _PickerHomeScreenState extends State<PickerHomeScreen> {
             itemBuilder: (BuildContext context) => packOptions,
             initialValue: selectedPack,
             icon: null,
-            child: FlatButton.icon(
+            child: TextButton.icon(
               onPressed: null,
               icon: Icon(
                 Icons.style,
@@ -124,10 +128,15 @@ class _PickerHomeScreenState extends State<PickerHomeScreen> {
                     angle: .55,
                     child: Icon(Icons.brightness_3),
                   )
-                : widget.brightness.mode == ThemeMode.light ? Icon(Icons.brightness_7) : Icon(Icons.brightness_auto),
-            onPressed: () => widget.onThemeChanged(widget.brightness.mode == ThemeMode.dark
-                ? AppBrightness.light
-                : widget.brightness.mode == ThemeMode.light ? AppBrightness.system : AppBrightness.dark),
+                : widget.brightness.mode == ThemeMode.light
+                    ? Icon(Icons.brightness_7)
+                    : Icon(Icons.brightness_auto),
+            onPressed: () =>
+                widget.onThemeChanged(widget.brightness.mode == ThemeMode.dark
+                    ? AppBrightness.light
+                    : widget.brightness.mode == ThemeMode.light
+                        ? AppBrightness.system
+                        : AppBrightness.dark),
             tooltip: 'Switch brightness',
           ),
         ],
@@ -140,12 +149,13 @@ class _PickerHomeScreenState extends State<PickerHomeScreen> {
             ButtonBar(
               alignment: MainAxisAlignment.center,
               children: [
-                RaisedButton(
+                ElevatedButton(
                   onPressed: _pickIcon,
-                  child: Text(_icon != null ? 'Change Icon' : 'Open IconPicker'),
+                  child:
+                      Text(_icon != null ? 'Change Icon' : 'Open IconPicker'),
                 ),
                 if (_icon != null)
-                  RaisedButton(
+                  ElevatedButton(
                     onPressed: () => setState(() => _icon = null),
                     child: Text('Clear Icon'),
                   ),
@@ -175,7 +185,7 @@ class _PickerHomeScreenState extends State<PickerHomeScreen> {
               ),
             ),
             Flexible(
-              child: SwitchListTile.adaptive(                
+              child: SwitchListTile.adaptive(
                 title: Text(
                   'Adaptive dialog',
                   style: TextStyle(color: Colors.white),

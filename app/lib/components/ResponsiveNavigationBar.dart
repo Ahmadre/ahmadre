@@ -9,14 +9,15 @@ class ResponsiveNavigationBar extends StatefulWidget {
   const ResponsiveNavigationBar({
     Key key,
     @required this.scaffoldKey,
-    this.buttonColor = Colors.black,    
+    this.buttonColor = Colors.black,
   }) : super(key: key);
 
   final Color buttonColor;
   final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
-  _ResponsiveNavigationBarState createState() => _ResponsiveNavigationBarState();
+  _ResponsiveNavigationBarState createState() =>
+      _ResponsiveNavigationBarState();
 }
 
 class _ResponsiveNavigationBarState extends State<ResponsiveNavigationBar> {
@@ -61,12 +62,18 @@ class _ResponsiveNavigationBarState extends State<ResponsiveNavigationBar> {
                   alignment: MainAxisAlignment.end,
                   buttonPadding: EdgeInsets.symmetric(horizontal: 20),
                   children: [
-                    FlatButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    TextButton(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.resolveWith(
+                          (states) => RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                        overlayColor: MaterialStateProperty.resolveWith(
+                          (states) => Colors.black12,
+                        ),
                       ),
                       onPressed: () => service.content = 'projects',
-                      splashColor: Colors.black12,
                       child: Text(
                         'Projects',
                         style: TextStyle(
@@ -74,12 +81,18 @@ class _ResponsiveNavigationBarState extends State<ResponsiveNavigationBar> {
                         ),
                       ),
                     ),
-                    FlatButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    TextButton(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.resolveWith(
+                          (states) => RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                        overlayColor: MaterialStateProperty.resolveWith(
+                          (states) => Colors.black12,
+                        ),
                       ),
                       onPressed: () => service.content = 'about',
-                      splashColor: Colors.black12,
                       child: Text(
                         'About',
                         style: TextStyle(
@@ -87,12 +100,18 @@ class _ResponsiveNavigationBarState extends State<ResponsiveNavigationBar> {
                         ),
                       ),
                     ),
-                    FlatButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    TextButton(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.resolveWith(
+                          (states) => RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                        overlayColor: MaterialStateProperty.resolveWith(
+                          (states) => Colors.black12,
+                        ),
                       ),
                       onPressed: () => service.content = 'contact',
-                      splashColor: Colors.black12,
                       child: Text(
                         'Contact',
                         style: TextStyle(

@@ -6,7 +6,8 @@ import 'package:flutter/cupertino.dart';
 /// Provides templates of dialogs with which one can create dynamic dialogs
 class CustomDialogs {
   /// Sets the standard Dialog shape (here rounded dialogs)
-  ShapeBorder standardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(15));
+  ShapeBorder standardShape =
+      RoundedRectangleBorder(borderRadius: BorderRadius.circular(15));
 
   /// Is used for Dialogs which calles API-Services directly
   GlobalKey<FormState> formKey = new GlobalKey();
@@ -24,8 +25,15 @@ class CustomDialogs {
   }
 
   /// Shows a dialog where the user is prompted to fill out a form
-  Future showInputDialog(BuildContext context, String title, String content, String hintText, String confirmText,
-      String cancelText, Function onConfirmClick, bool dismissible,
+  Future showInputDialog(
+      BuildContext context,
+      String title,
+      String content,
+      String hintText,
+      String confirmText,
+      String cancelText,
+      Function onConfirmClick,
+      bool dismissible,
       {String inputType,
       bool obscureInputFields = false,
       bool isAuthScreen = false,
@@ -91,12 +99,14 @@ class CustomDialogs {
                                   return 'Feld darf nicht leer sein';
                                 }
                                 if (inputType == 'confirm' && !isAuthScreen) {
-                                  if (inputText.text != inputConfirmText.text) return 'Eingaben stimmen nicht überein';
+                                  if (inputText.text != inputConfirmText.text)
+                                    return 'Eingaben stimmen nicht überein';
                                 }
                                 return null;
                               },
                               decoration: InputDecoration(
-                                  hintStyle: TextStyle(color: Theme.of(context).hintColor),
+                                  hintStyle: TextStyle(
+                                      color: Theme.of(context).hintColor),
                                   filled: false,
                                   hintText: hintText),
                               maxLines: 1,
@@ -124,7 +134,8 @@ class CustomDialogs {
                                 maxLines: 1,
                                 obscureText: obscureInputFields,
                                 decoration: InputDecoration(
-                                    hintStyle: TextStyle(color: Theme.of(context).hintColor),
+                                    hintStyle: TextStyle(
+                                        color: Theme.of(context).hintColor),
                                     filled: false,
                                     hintText: confirmHintText),
                                 controller: inputConfirmText)))
@@ -134,7 +145,8 @@ class CustomDialogs {
                     height: 50,
                   ),
                   Container(
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(15)),
                     child: SizedBox(
                       width: double.infinity,
                       height: 50,
@@ -144,29 +156,48 @@ class CustomDialogs {
                         mainAxisSize: MainAxisSize.max,
                         children: <Widget>[
                           Expanded(
-                              child: FlatButton(
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(15),
+                              child: TextButton(
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.resolveWith(
+                                (states) => const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(15),
+                                  ),
+                                ),
                               ),
                             ),
                             child: Text(
                               confirmText,
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, color: Theme.of(context).accentColor, fontSize: 18),
+                                  fontWeight: FontWeight.bold,
+                                  color: Theme.of(context).accentColor,
+                                  fontSize: 18),
                             ),
                             onPressed: () => {
                               if (formKey.currentState.validate())
-                                {onConfirmClick(inputText.text, inputConfirmText.text), Navigator.pop(context)}
+                                {
+                                  onConfirmClick(
+                                      inputText.text, inputConfirmText.text),
+                                  Navigator.pop(context)
+                                }
                             },
                           )),
                           Expanded(
-                            child: FlatButton(
-                              shape: const RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(15))),
+                            child: TextButton(
+                              style: ButtonStyle(
+                                shape: MaterialStateProperty.resolveWith(
+                                  (states) => const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.only(
+                                      bottomRight: Radius.circular(15),
+                                    ),
+                                  ),
+                                ),
+                              ),
                               child: Text(
                                 cancelText,
-                                style: TextStyle(color: Theme.of(context).errorColor, fontSize: 18),
+                                style: TextStyle(
+                                    color: Theme.of(context).errorColor,
+                                    fontSize: 18),
                               ),
                               onPressed: () {
                                 this.clearInputText();
@@ -230,7 +261,8 @@ class CustomDialogs {
                     ),
                     child: new Text(
                       title,
-                      style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 20),
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontSize: 20),
                     ),
                   ),
                   const SizedBox(
@@ -250,7 +282,9 @@ class CustomDialogs {
                     height: 20,
                   ),
                   Container(
-                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(15)),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15)),
                     child: SizedBox(
                       width: double.infinity,
                       height: 50,
@@ -260,10 +294,14 @@ class CustomDialogs {
                         mainAxisSize: MainAxisSize.max,
                         children: <Widget>[
                           Expanded(
-                              child: FlatButton(
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(15),
+                              child: TextButton(
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.resolveWith(
+                                (states) => const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(15),
+                                  ),
+                                ),
                               ),
                             ),
                             child: Text(
@@ -276,10 +314,14 @@ class CustomDialogs {
                             onPressed: onConfirmClick,
                           )),
                           Expanded(
-                            child: FlatButton(
-                              shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(15),
+                            child: TextButton(
+                              style: ButtonStyle(
+                                shape: MaterialStateProperty.resolveWith(
+                                  (states) => const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(15),
+                                    ),
+                                  ),
                                 ),
                               ),
                               child: Text(
@@ -365,11 +407,15 @@ class CustomDialogs {
                   child: SizedBox(
                     width: double.infinity,
                     height: 50,
-                    child: FlatButton(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(15),
-                          bottomRight: Radius.circular(15),
+                    child: TextButton(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.resolveWith(
+                          (states) => const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(15),
+                              bottomRight: Radius.circular(15),
+                            ),
+                          ),
                         ),
                       ),
                       child: Text(
@@ -395,8 +441,8 @@ class CustomDialogs {
   }
 
   /// Shows a dialog with informations about the app
-  void showAbout(BuildContext context, String title, String appVersion, String applicationLegalese, String content,
-      String confirmText) async {
+  void showAbout(BuildContext context, String title, String appVersion,
+      String applicationLegalese, String content, String confirmText) async {
     await showDialog(
       context: context,
       barrierDismissible: true,
@@ -425,11 +471,18 @@ class CustomDialogs {
                       child: ListTile(
                         leading: CircleAvatar(
                             radius: 25,
-                            backgroundImage: const ExactAssetImage('assets/img/mataku_logo.png') ?? const FlutterLogo(),
+                            backgroundImage: const ExactAssetImage(
+                                    'assets/img/mataku_logo.png') ??
+                                const FlutterLogo(),
                             backgroundColor: Colors.white),
-                        title: new Text(title, style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 20)),
-                        subtitle: new Text(applicationLegalese + '\n\n' + appVersion,
-                            style: TextStyle(color: Colors.black54, fontSize: 12)),
+                        title: new Text(title,
+                            style: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                                fontSize: 20)),
+                        subtitle: new Text(
+                            applicationLegalese + '\n\n' + appVersion,
+                            style:
+                                TextStyle(color: Colors.black54, fontSize: 12)),
                       )),
                   const SizedBox(
                     height: 10,
@@ -462,16 +515,22 @@ class CustomDialogs {
                     child: SizedBox(
                       width: double.infinity,
                       height: 50,
-                      child: FlatButton(
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(15),
-                            bottomRight: Radius.circular(15),
+                      child: TextButton(
+                        style: ButtonStyle(
+                          shape: MaterialStateProperty.resolveWith(
+                            (states) => const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(15),
+                                bottomRight: Radius.circular(15),
+                              ),
+                            ),
                           ),
                         ),
                         child: Text(
                           confirmText,
-                          style: TextStyle(color: Theme.of(context).accentColor, fontSize: 16),
+                          style: TextStyle(
+                              color: Theme.of(context).accentColor,
+                              fontSize: 16),
                         ),
                         onPressed: () {
                           Navigator.of(context).pop();
@@ -489,7 +548,8 @@ class CustomDialogs {
   }
 
   /// Shows a loading dialog while async calls are processed
-  void showLoadingDialog(BuildContext context, Widget loadingWidget, bool dismissible) async {
+  void showLoadingDialog(
+      BuildContext context, Widget loadingWidget, bool dismissible) async {
     await showDialog(
       context: context,
       barrierDismissible: dismissible,

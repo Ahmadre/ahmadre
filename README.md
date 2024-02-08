@@ -2,7 +2,7 @@
 
 ### `Contributing == Gratitude`
 
-[![Rebar Ahmad](https://github-readme-stackoverflow.vercel.app/?userID=5535773)](https://stackoverflow.com/users/5535773/rebar)
+![Ahmadre](https://firebasestorage.googleapis.com/v0/b/ahmadre-5ba71.appspot.com/o/white_logo_dark_small.png?alt=media&token=3d6848b9-9b2b-46b5-9574-f3c829f59dec)
 
 ![Github Stats](https://github-readme-stats.vercel.app/api?username=ahmadre&show_icons=true)
 
